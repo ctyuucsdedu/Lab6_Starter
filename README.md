@@ -1,7 +1,8 @@
 # Lab 6 - Starter
 
-Name:
-Kevin Yu
+Name:<br>
+Delia McGrath<br>
+Kevin Yu<br>
 
 Link of the page:
 https://ctyuucsdedu.github.io/Lab6_Starter/
