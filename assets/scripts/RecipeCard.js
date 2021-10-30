@@ -1,6 +1,10 @@
 class RecipeCard extends HTMLElement {
   constructor() {
     // Part 1 Expose - TODO
+    //***********************************************expose********************************************
+    super();
+    const shadowRoot = this.attachShadow({ mode: 'open' });
+    //***********************************************expose********************************************
 
     // You'll want to attach the shadow DOM here
   }
@@ -100,6 +104,76 @@ class RecipeCard extends HTMLElement {
     // created in the constructor()
 
     // Part 1 Expose - TODO
+    //***********************************************expose********************************************
+    let thumbnail = document.createElement('img')
+    thumbnail.src = searchForKey(data, 'thumbnailUrl')
+    thumbnail.alt = searchForKey(data, 'name')
+    card.appendChild(thumbnail)
+
+    let title = document.createElement('p')
+    title.setAttribute("class", "title")
+    let body = document.createElement('a')
+    body.innerHTML = searchForKey(data, 'headline')
+    body.href = getUrl(data)
+    title.appendChild(body)
+    card.appendChild(title)
+
+    let organization = document.createElement('p')
+    organization.setAttribute("class", "organization")
+    organization.innerHTML = getOrganization(data)
+    card.appendChild(organization)
+
+    let rating = document.createElement('div')
+    rating.setAttribute("class", "rating")
+    let span = document.createElement('span')
+    let review = searchForKey(data, 'ratingValue')
+    if (review != undefined) {
+      span.innerHTML = review
+      let ratingImage = document.createElement('img')
+
+      if (review < 0.5) {
+        ratingImage.src = "/assets/images/icons/0-star.svg"
+        ratingImage.alt = "0 star"
+      } else if (review < 1.5) {
+        ratingImage.src = "/assets/images/icons/1-star.svg"
+        ratingImage.alt = "1 star"
+      } else if (review < 2.5) {
+        ratingImage.src = "/assets/images/icons/2-star.svg"
+        ratingImage.alt = "2 stars"
+      } else if (review < 3.5) {
+        ratingImage.src = "/assets/images/icons/3-star.svg"
+        ratingImage.alt = "3 stars"
+      } else if (review < 4.5) {
+        ratingImage.src = "/assets/images/icons/4-star.svg"
+        ratingImage.alt = "4 stars"
+      } else {
+        ratingImage.src = "/assets/images/icons/5-star.svg"
+        ratingImage.alt = "5 stars"
+      }
+
+      let span1 = document.createElement('span')
+      span1.innerHTML = "(" + searchForKey(data, 'ratingCount') + ")"
+      rating.appendChild(span)
+      rating.appendChild(ratingImage)
+      rating.appendChild(span1)
+    } else {
+      span.innerHTML = "No Reviews"
+      rating.appendChild(span)
+    }
+    card.appendChild(rating)
+
+    let cookingTime = document.createElement('time')
+    cookingTime.innerHTML = convertTime(searchForKey(data, 'totalTime'))
+    card.appendChild(cookingTime)
+
+    let ingredients = document.createElement('p')
+    ingredients.setAttribute("class", "ingredients")
+    ingredients.innerHTML = createIngredientList(searchForKey(data, 'recipeIngredient'))
+    card.appendChild(ingredients)
+
+    this.shadowRoot.appendChild(card)
+    this.shadowRoot.appendChild(styleElem)
+    //***********************************************expose********************************************
   }
 }
 
