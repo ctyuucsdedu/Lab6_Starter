@@ -132,22 +132,22 @@ class RecipeCard extends HTMLElement {
       let ratingImage = document.createElement('img')
 
       if (review < 0.5) {
-        ratingImage.src = "/assets/images/icons/0-star.svg"
+        ratingImage.src = "assets/images/icons/0-star.svg"
         ratingImage.alt = "0 star"
       } else if (review < 1.5) {
-        ratingImage.src = "/assets/images/icons/1-star.svg"
+        ratingImage.src = "assets/images/icons/1-star.svg"
         ratingImage.alt = "1 star"
       } else if (review < 2.5) {
-        ratingImage.src = "/assets/images/icons/2-star.svg"
+        ratingImage.src = "assets/images/icons/2-star.svg"
         ratingImage.alt = "2 stars"
       } else if (review < 3.5) {
-        ratingImage.src = "/assets/images/icons/3-star.svg"
+        ratingImage.src = "assets/images/icons/3-star.svg"
         ratingImage.alt = "3 stars"
       } else if (review < 4.5) {
-        ratingImage.src = "/assets/images/icons/4-star.svg"
+        ratingImage.src = "assets/images/icons/4-star.svg"
         ratingImage.alt = "4 stars"
       } else {
-        ratingImage.src = "/assets/images/icons/5-star.svg"
+        ratingImage.src = "assets/images/icons/5-star.svg"
         ratingImage.alt = "5 stars"
       }
 
