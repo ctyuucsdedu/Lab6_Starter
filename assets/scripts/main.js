@@ -88,7 +88,7 @@ function bindShowMore() {
   // in the recipeData object where you stored them/
 
   // Part 2 Explore - TODO
-
+/*
   const BUTTON = document.querySelector('#button-wrapper > button');
   let moreSelected = false;
   const BUTTON = document.querySelector('#button-wrapper > button');
@@ -105,7 +105,6 @@ function bindShowMore() {
         ELEMENT.data = recipeData[i];
         document.querySelector('main').append(ELEMENT);
       }
-
     } 
     
     else {
@@ -119,4 +118,5 @@ function bindShowMore() {
 
     }
   });
+  */
 }
