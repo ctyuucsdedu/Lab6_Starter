@@ -1,0 +1,59 @@
+{
+    "@type":"Recipe",
+    "@context":"http://schema.org/",
+    "name":"Spooky Boo Brownies",
+    "keywords":"spooky boo brownies",
+    "recipeCategory":"Dessert",
+    "image":"https://images-gmi-pmc.edge-generalmills.com/472326a2-9194-439b-894d-d93b19e6493d.jpg",
+    "description":"Trick or treating just got even more fun thanks to these Halloween ghost brownies. Whether you're baking for a school party or just getting festive, our spooky brownies are as delightful as they are delicious.  Between the ooey, gooey brownies, creamy frosting and marshmallow surprise, this is a Halloween brownie idea you have to make. Add these to any dessert tray or table for a head-turning dessert. You'll be legendary for these ghost brownies!",
+    "recipeIngredient":[
+       "1  box (16 oz) Betty Crocker™ Supreme original brownie mix",
+       "  Water, vegetable oil and egg called for on brownie mix box ",
+       "1  cup Betty Crocker™ Rich & Creamy creamy white frosting (from 16-oz container)",
+       "16  large marshmallows ",
+       "  Betty Crocker™ black decorating gel (from 0.68-oz tube)"
+    ],
+    "totalTime":"PT3H0M",
+    "prepTime":"PT0H15M",
+    "recipeYield":"16",
+    "aggregateRating":{
+       "@type":"AggregateRating",
+       "ratingValue":"4.5",
+       "ratingCount":"13",
+       "bestRating":"5",
+       "worstRating":"1"
+    },
+    "author":{
+       "@type":"Person",
+       "name":"Betty Crocker Kitchens"
+    },
+    "recipeInstructions":[
+       {
+          "@type":"HowToStep",
+          "text":"Heat oven to 350°F (325°F for dark or nonstick pan). Line 8- or 9-inch square pan with foil, allowing some to hang over edges of pan. Grease bottom and sides of foil with shortening or cooking spray. Make and bake brownies as directed on box for 8- or 9-inch square pan. Cool completely on cooling rack, about 1 1/2 hours. Freeze in pan 15 minutes. Using foil to lift, remove brownies from pan, and peel foil away. Cut into 4 rows by 4 rows."
+       },
+       {
+          "@type":"HowToStep",
+          "text":"Heat frosting in microwavable bowl uncovered on High 20 to 30 seconds, stirring every 10 seconds, until frosting can be stirred smooth and fluid. If frosting becomes too firm while decorating, microwave 5 seconds; stir."
+       },
+       {
+          "@type":"HowToStep",
+          "text":"Top each brownie with 1 large marshmallow. Spoon 1 tablespoon frosting over each marshmallow to coat. Let stand until frosting is set, about 30 minutes. Use black gel to make eyes and mouths."
+       }
+    ],
+    "nutrition":{
+       "@type":"NutritionInformation",
+       "calories":"250 ",
+       "carbohydrateContent":"41 g",
+       "cholesterolContent":"10 mg",
+       "fatContent":"1 1/2 ",
+       "fiberContent":"0 g",
+       "proteinContent":"1 g",
+       "saturatedFatContent":"2 g",
+       "servingSize":"1 Brownie",
+       "sodiumContent":"135 mg",
+       "sugarContent":"30 g",
+       "transFatContent":"0 g"
+    },
+    "dateCreated":"03/27/2013"
+ }
