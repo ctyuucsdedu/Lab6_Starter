@@ -5,10 +5,7 @@
 const recipes = [
   'https://introweb.tech/assets/json/ghostCookies.json',
   'https://introweb.tech/assets/json/birthdayCake.json',
-  'https://introweb.tech/assets/json/chocolateChip.json'
-];
-
-const moreRecipes = [
+  'https://introweb.tech/assets/json/chocolateChip.json',
   'assets/recipes/monsterBites.json',
   'assets/recipes/spookyBrownies.json',
   'assets/recipes/spookyCookies.json'
@@ -18,7 +15,6 @@ const moreRecipes = [
 // data will be added to this object below. You may use whatever you like for the
 // keys as long as it's unique, one suggestion might but the URL itself
 const recipeData = {}
-const moreRecipeData = {}
 
 window.addEventListener('DOMContentLoaded', init);
 
@@ -66,19 +62,6 @@ async function fetchRecipes() {
   });
 }
 
-async function moreFetchRecipes() {
-  return new Promise((resolve, reject) => {
-    for (let i = 0; i < moreRecipes.length; i++) {
-      fetch(moreRecipes[i])
-        .then(response => response.json())
-        .then(data => moreRecipeData[moreRecipes[i]] = data)
-        .then(() => { if (Object.keys(moreRecipeData).length == moreRecipes.length) { resolve(true) } })
-        .catch(err => reject(err));
-    }
-
-  })
-}
-
 function createRecipeCards() {
   // This function is called for you up above.
   // From within this function you can access the recipe data from the JSON 
@@ -93,14 +76,6 @@ function createRecipeCards() {
     recipeCard.data = recipeData[i]
     document.querySelector('main').appendChild(recipeCard)
   }
-
-  moreRecipes.forEach(recipeUrl => {
-    const recipeCard = document.createElement('recipe-card')
-    recipeCard.data = moreRecipeData[recipeUrl]
-    recipeCard.id = recipeUrl
-    recipeCard.style.display = "none"
-    document.querySelector('main').appendChild(recipeCard)
-  })
   //***********************************************expose********************************************
 }
 
@@ -113,16 +88,25 @@ function bindShowMore() {
   // in the recipeData object where you stored them/
 
   // Part 2 Explore - TODO
-  document.querySelector('button').addEventListener("click", () =>
-  moreRecipes.forEach(recipeUrl => {
-    let re = document.getElementById(recipeUrl)
-    if (re.style.display === "none") {
-      re.style.display = "block"
-      document.querySelector('button').innerHTML="Show less"
+  const showMoreElement = document.querySelector('#button-wrapper button');
+  showMoreElement.addEventListener('click', () => {
+    if (showMoreElement.textContent === 'Show more') {
+      // Add cards for recipes 4 and up
+      for (let i = 3; i < recipes.length; i++) {
+        const recipeUrl = recipes[i];
+        const data = recipeData[recipeUrl];
+        const recipeCardElement = document.createElement('recipe-card');
+        recipeCardElement.data = data;
+        document.getElementsByTagName('main')[0].appendChild(recipeCardElement);
+      }
+      showMoreElement.textContent = 'Show less';
     } else {
-      re.style.display = "none"
-      document.querySelector('button').innerHTML="Show more"
+      // Remove cards from recipes 4 and up
+      const recipeCards = document.querySelectorAll('recipe-card');
+      for (let i = 3; i < recipes.length; i++) {
+        recipeCards[i].remove();
+      }
+      showMoreElement.textContent = 'Show more';
     }
-  })
-)
+  });
 }
